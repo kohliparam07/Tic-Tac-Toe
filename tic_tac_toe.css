@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #161616, cyan, #161616); 
+  }
+.gameover_page{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+}
+.change-bg{
+    opacity: 1;
+    visibility: visible;
+}
+.over_container{
+    position: absolute;
+    width: 660px;
+    height: 400px;
+    /* border: 2px solid red; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* padding-top: 50px; */
+}
+.logo{
+    font-weight: bold;
+    color: rgb(163, 163, 163);
+    text-align: center;
+    text-shadow: 2px 2px 0px rgb(255, 255, 255);
+}
+.logo span{
+    font-size: 4em;
+
+}
+#restart, #quit{
+    width: 210px;
+    height: 30px;
+    margin: 80px 57.5px 10px 57.5px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+#restart{
+    background: linear-gradient(to bottom, #7cff7c, #3a5f00);
+}
+#quit{
+    background: linear-gradient(to bottom, #fc9393, #5f0000);
+}
+#restart:hover, #quit:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+.winner{
+    display: inline-flex;
+}
+.winner img{
+    height: 150px;
+    margin: 55px 0px 0px 34px;
+}
+#winner_box{
+    /* border: 2px solid silver; */
+    height: 80px;
+    margin-top: 105px;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 4px 4px 45px cyan;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+
+.container{
+    width: 407px;
+    height: 520px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, #2b2d47 10%, #181926);
+    /* box-shadow: inset -3px -3px 3px rgba(255, 255, 255, 0.26),inset 3px 3px 3px rgba(0, 0, 0, 0.75); */
+    /* border: 2px solid black; */
+}
+.top_bar{
+    width: 90%;
+    height: 50px;
+    padding-right: 0.3em;
+    border-radius: 20px;
+    border: none;
+    margin-top: 25px;
+    margin-left: 21px;
+    font-family: 'Baloo Bhai 2', cursive;
+    outline: none;
+    box-shadow: inset -3px -3px 3px rgba(255, 255, 255, 0.26),inset 3px 3px 3px rgba(0, 0, 0, 0.75);
+}
+.game_board{
+    width: 90%;
+    height: 400px;
+    /* border: 2px solid black; */
+    margin-top: 20px;
+    margin-left: 21px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 22px;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    box-shadow: inset -3px -3px 3px rgba(255, 255, 255, 0.26),inset 3px 3px 3px rgba(0, 0, 0, 0.8);
+    font-size: 60px;
+    font-family: 'Baloo Bhai 2', cursive;
+    font-weight: bold;
+    color: rgb(0, 225, 255);
+    text-shadow: 0px 0px 5px rgb(0, 236, 253);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box:hover{
+    cursor: pointer;
+    background: linear-gradient(to bottom, #4b4b56 0%, #242838);
+}
+#x_turn, #o_turn{
+    width: 49%;
+    z-index: 3;
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+#background{
+    width: 45%;
+    height: 49px;
+    position: absolute;
+    top: 24px;
+    left: 5%;
+    background: #29cde0;
+    margin: 1px 1px 1px 1px;
+    z-index: -1;
+    border-radius: 20px;
+    transition: 0.2s;
+    /* box-shadow: inset -3px -3px 3px rgba(255, 255, 255, 0.26),inset 3px 3px 3px rgba(0, 0, 0, 0.75); */
+}
+
+.change_back{
+    left: 181px;
+}
+
+@media (max-width: 800px){
+    .container{
+        height: 420px;
+       
+    }
+    .game_board{
+        height: 320px;
+        padding-top: 2px;
+        margin-top: 18px;
+    }
+    .box{
+        width: 100px;
+        height: 100px;
+    }
+    .top_bar{
+        height: 35px;
+    }
+    #background{
+        height: 35px;
+    }
+}
+@media (max-width: 420px){
+    .container{
+        height: 450px;
+       width: 300px;
+    }
+    .game_board{
+        height: 320px;
+        padding-top: 2px;
+        margin-top: 48px;
+        margin-left: 16px;
+    }
+    .box{
+        width: 80px;
+        height: 80px;
+    }
+    .top_bar{
+        margin-left: 16px;
+    }
+    .over_container{
+        position: absolute;
+        width: 300px;
+        /* height: 400px; */
+        /* border: 2px solid red; */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* padding-top: 50px; */
+    }
+    .logo span{
+        font-size: 2.5em;
+    }
+    
+    .winner img {
+        height: 97px;
+        width: 117px;
+        margin: 30px 0px 0px 76px;
+    }
+    
+    .winner {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    #restart, #quit{
+        margin: 17px 48.5px 10px 41.5px;
+    }
+    #winner_box{
+        /* border: 2px solid silver; */
+        height: 60px;
+        margin-top: 40px;
+        font-size: 2rem;
+        color: white;
+    }
+}
